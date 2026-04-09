@@ -1,30 +1,27 @@
 ```
-╔═════════════════════════════════════════════════════════════════╗
-║                                                                 ║
-║  ██╗     ██╗     ███╗   ███╗  ██╗    ██╗██╗██╗  ██╗██╗██████╗  ║
-║  ██║     ██║     ████╗ ████║  ██║    ██║██║██║ ██╔╝██║██╔══██╗ ║
-║  ██║     ██║     ██╔████╔██║  ██║ █╗ ██║██║█████╔╝ ██║██║  ██║ ║
-║  ██║     ██║     ██║╚██╔╝██║  ██║███╗██║██║██╔═██╗ ██║██║  ██║ ║
-║  ███████╗███████╗██║ ╚═╝ ██║  ╚███╔███╔╝██║██║  ██╗██║██████╔╝ ║
-║  ╚══════╝╚══════╝╚═╝     ╚═╝   ╚══╝╚══╝ ╚═╝╚═╝  ╚═╝╚═╝═════╝ ║
-║                                                                 ║
-║  your AI-maintained knowledge base in obsidian                  ║
-║                                                                 ║
-║  ┌─────────┐   ┌────────────┐   ┌──────────────────────┐       ║
-║  │  raw/   │──>│  CLAUDE.md  │──>│  wiki/               │       ║
-║  │ clips   │   │  (schema)   │   │  concepts/ entities/  │       ║
-║  │ ideas   │   │             │   │  sources/ outputs/    │       ║
-║  │ tweets  │   │  ingest     │   │  index.md log.md      │       ║
-║  │ papers  │   │  query      │   │                       │       ║
-║  │ urls    │   │  explore    │   │  ──> obsidian graph    │       ║
-║  └─────────┘   │  lint       │   └──────────────────────┘       ║
-║                └────────────┘                                   ║
-║                                                                 ║
-║  clip it, ingest it, query it, watch it compound                ║
-║  works with any agent that reads markdown and runs bash         ║
-║  @shannholmberg                                                 ║
-║                                                                 ║
-╚═════════════════════════════════════════════════════════════════╝
++------------------------------------------------------------------+
+|                                                                  |
+|   LLM WIKID                                                     |
+|                                                                  |
+|   your AI-maintained knowledge base in obsidian                  |
+|                                                                  |
+|   raw sources --> AI agent --> structured wiki                   |
+|                                                                  |
+|   +---------+    +------------+    +----------------------+      |
+|   |  raw/   |--->|  CLAUDE.md |--->|  wiki/               |      |
+|   | clips   |    |  (schema)  |    |  concepts/ entities/ |      |
+|   | ideas   |    |            |    |  sources/ outputs/   |      |
+|   | tweets  |    |  ingest    |    |  index.md log.md     |      |
+|   | papers  |    |  query     |    |                      |      |
+|   | urls    |    |  explore   |    |  --> obsidian graph   |      |
+|   +---------+    |  lint      |    +----------------------+      |
+|                  +------------+                                  |
+|                                                                  |
+|   clip it, ingest it, query it, watch it compound                |
+|   works with any agent that reads markdown and runs bash         |
+|   @shannholmberg                                                 |
+|                                                                  |
++------------------------------------------------------------------+
 ```
 
 # LLM Wikid
