@@ -1,28 +1,6 @@
-```
-╔════════════════════════════════════════════════════════════════╗
-║                                                                ║
-║  LLM WIKID                                                     ║
-║                                                                ║
-║  your AI-maintained knowledge base in obsidian                 ║
-║                                                                ║
-║  raw sources --> AI agent --> structured wiki                   ║
-║                                                                ║
-║  +---------+   +------------+   +-------------------+          ║
-║  |  raw/   |-->|  CLAUDE.md |-->|  wiki/            |          ║
-║  | clips   |   |  (schema)  |   |  concepts/        |          ║
-║  | ideas   |   |            |   |  entities/        |          ║
-║  | tweets  |   |  ingest    |   |  sources/         |          ║
-║  | papers  |   |  query     |   |  outputs/         |          ║
-║  | urls    |   |  explore   |   |  index.md         |          ║
-║  +---------+   |  lint      |   +-------------------+          ║
-║                +------------+                                  ║
-║                                                                ║
-║  clip it, ingest it, query it, watch it compound               ║
-║  works with any agent that reads markdown and runs bash        ║
-║  @shannholmberg                                                ║
-║                                                                ║
-╚════════════════════════════════════════════════════════════════╝
-```
+<p align="center">
+  <img src="assets/cover.png" alt="LLM Wikid" width="700">
+</p>
 
 # LLM Wikid
 
