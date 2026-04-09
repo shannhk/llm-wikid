@@ -122,29 +122,47 @@ The agent creates wiki pages, adds `[[wikilinks]]` between them, runs bias check
 
 ## Folder Structure
 
+After your first ingest, this is what it looks like:
+
 ```
-raw/                          # your messy inbox
-  clippings/                  # Obsidian Web Clipper landing zone (auto-sorted)
-  ideas/                      # notes, brainstorms, half-formed thoughts
-  bookmarks/                  # saved tweets, YouTube, Reddit links
-  articles/                   # your own published content
-  papers/                     # research papers, PDFs
-  assets/images/              # downloaded media from sources
-  x-archive/                  # X/Twitter account export
+raw/                                          # your messy inbox
+  clippings/                                  # Web Clipper landing zone (auto-sorted on ingest)
+  ideas/
+    idea-brand-voice-skill.md                 # half-formed thought you typed out
+    idea-ai-marketing-repos.md                # project idea
+  bookmarks/
+    karpathy-2026-llm-wiki.md                 # clipped tweet, resolved to full content
+    gregisenberg-ai-saas-framework.md         # another clip
+  articles/
+    my-2026-three-moats-article.md            # your own published content
+  papers/                                     # research PDFs
+  assets/images/
+    flowchart-agent-architecture.png          # downloaded from a tweet
+    ascii-marketing-levels.png                # screenshot you added
+  x-archive/                                  # X/Twitter account export (87 tweets, etc.)
 
-wiki/                         # compiled knowledge (AI-maintained)
-  index.md                    # master catalog with TLDRs for fast scanning
-  log.md                      # append-only changelog of every operation
-  dashboard.md                # Dataview queries for Obsidian
-  concepts/                   # ideas, frameworks, topics
-  entities/                   # people, companies, tools
-  sources/                    # one summary per raw source
-  syntheses/                  # cross-cutting analysis
-  outputs/                    # filed answers to queries
-  sops/                       # repeatable processes
+wiki/                                         # compiled knowledge (AI-maintained)
+  index.md                                    # master catalog with TLDRs
+  log.md                                      # append-only changelog
+  dashboard.md                                # Dataview dashboard
+  concepts/
+    ai-marketing.md                           # appeared in 8+ sources
+    distribution-moat.md                      # cross-cutting concept
+    context-engineering.md                    # stub (1 source, will grow)
+  entities/
+    claude-superpowers.md                     # tool page
+    greg-isenberg.md                          # person page
+  sources/
+    karpathy-2026-llm-wiki.md                 # summary of one raw source
+    shann-2026-agent-marketing-department.md  # themed group of your tweets
+  syntheses/                                  # cross-cutting analysis (grows over time)
+  outputs/
+    context-engineering-explained.md          # filed answer to a /wiki-query
+  sops/
+    visual-content-style.md                   # your documented process
 
-templates/                    # starter templates for each page type
-.claude/commands/             # slash commands
+templates/                                    # starter templates for each page type
+.claude/commands/                             # slash commands
 ```
 
 ## Quality Controls
