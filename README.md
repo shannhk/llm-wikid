@@ -156,3 +156,28 @@ Key principles:
 - [Andrej Karpathy's LLM Wiki pattern](https://x.com/karpathy/status/1890540708772143562) - the original idea
 - [hooeem's LLM Knowledge Base course](https://www.youtube.com/watch?v=IVpOyKCNZYw) - detailed tutorial on the pattern
 - Built by [@shannholmberg](https://x.com/shannholmberg)
+
+## Search (qmd)
+
+For faster search across your wiki, install [qmd](https://github.com/tobi/qmd) by Tobi Lutke. It runs 100% locally with hybrid BM25/vector search and LLM re-ranking.
+
+```bash
+npm install -g @tobilu/qmd
+qmd collection add wiki --name my-wiki
+qmd embed
+```
+
+Search your wiki:
+```bash
+qmd search "query"        # Fast keyword search
+qmd query "query"         # Hybrid search with LLM re-ranking
+```
+
+qmd also has an MCP server so your agent can use it as a native tool:
+```json
+{
+  "mcpServers": {
+    "qmd": { "command": "qmd", "args": ["mcp"] }
+  }
+}
+```
