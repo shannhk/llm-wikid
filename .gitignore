@@ -7,9 +7,10 @@
 .DS_Store
 Thumbs.db
 
-# Claude Code (keep commands/, ignore everything else)
+# Claude Code (keep shared commands and settings, ignore user-specific)
 .claude/*
 !.claude/commands/
+!.claude/settings.json
 
 # Secrets
 .env

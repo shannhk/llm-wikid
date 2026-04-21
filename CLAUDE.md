@@ -160,7 +160,15 @@ Every concept, synthesis, and source page MUST include:
 [What we don't know, what's missing, what needs more sources]
 ```
 
-This prevents the wiki from becoming an echo chamber that agrees with every source.
+**Inline contradictions** (when two sources conflict inside a page body) MUST use Obsidian callout syntax:
+
+```markdown
+> [!contradiction] Source A vs Source B
+> [[source-a]] claims X, but [[source-b]] claims Y.
+> Resolution: {stated position, or "unresolved - flagged for review"}.
+```
+
+Use `[!contradiction]` callouts instead of prose like "however, some argue..." - callouts render as visually distinct blocks in Obsidian and are scannable at a glance. This prevents the wiki from becoming an echo chamber and makes conflicts explicit.
 
 ## Operations
 
@@ -245,6 +253,15 @@ This prevents the wiki from becoming an echo chamber that agrees with every sour
 - **Git**: Version control for the vault. Every change is reversible.
 - **Obsidian**: Browse and read the wiki. Graph view for connections. Dataview for queries.
 - **Obsidian Web Clipper**: Save location set to `raw/clippings/`. Clip anything - tweets, articles, Reddit, YouTube, GitHub. During INGEST Phase 0, files get sorted to the correct raw/ subfolder based on source URL, then removed from clippings/.
+
+## Session Memory (Hot Cache)
+
+`wiki/hot.md` is a rolling short-term cache of recent sessions. It exists so new conversations don't need a recap.
+
+- **Read it**: auto-injected at SessionStart via hook in `.claude/settings.json`. No action needed.
+- **Write it**: auto-regenerated at Stop via `scripts/update-hot-cache.sh` (calls `claude -p` one-shot in the background, 90s timeout, fails silently so it never blocks session shutdown).
+- **Scope**: last session + recent decisions + open threads. NOT a replacement for `log.md` (permanent) or `index.md` (structural). If you find yourself writing long-form content into `hot.md`, that belongs in a concept/synthesis page instead.
+- **Editing**: You can edit `hot.md` manually to correct the cache or seed context for the next session. The Stop hook preserves edits because the regeneration prompt passes previous hot.md contents as input.
 
 ## Scale Plan
 

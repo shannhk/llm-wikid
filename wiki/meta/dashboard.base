@@ -1,0 +1,62 @@
+filters:
+  and:
+    - file.ext == "md"
+    - file.path.startsWith("wiki/")
+formulas:
+  days_since_modified: date(today()) - date(file.frontmatter.date_modified)
+properties:
+  file.name:
+    displayName: Page
+  file.frontmatter.type:
+    displayName: Type
+  file.frontmatter.tldr:
+    displayName: TLDR
+  file.frontmatter.confidence:
+    displayName: Confidence
+  file.frontmatter.explored:
+    displayName: Reviewed
+  file.frontmatter.date_modified:
+    displayName: Modified
+  formula.days_since_modified:
+    displayName: Days ago
+views:
+  - type: table
+    name: Recent
+    order:
+      - file.name
+      - file.frontmatter.type
+      - file.frontmatter.tldr
+      - file.frontmatter.date_modified
+    sort: []
+    limit: 30
+  - type: table
+    name: Low confidence
+    filters:
+      or:
+        - file.frontmatter.confidence == "low"
+        - file.frontmatter.confidence == "uncertain"
+    order:
+      - file.name
+      - file.frontmatter.type
+      - file.frontmatter.confidence
+      - file.frontmatter.tldr
+  - type: table
+    name: Unexplored
+    filters:
+      and:
+        - file.frontmatter.explored == false
+    order:
+      - file.name
+      - file.frontmatter.type
+      - file.frontmatter.date_modified
+    sort: []
+  - type: table
+    name: Stale (> 90 days)
+    filters:
+      and:
+        - formula.days_since_modified > 90
+    order:
+      - file.name
+      - file.frontmatter.type
+      - formula.days_since_modified
+    sort: []

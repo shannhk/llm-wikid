@@ -94,6 +94,18 @@ The agent creates wiki pages, adds `[[wikilinks]]` between them, runs bias check
 | `/wiki-query [question]` | Research a question, get a cited answer, file it back |
 | `/wiki-explore [topic]` | Actively research and expand a topic using web search and `/last30days` |
 | `/wiki-lint` | Health check: contradictions, orphans, broken links, stale content |
+| `/save [slug]` | File the current conversation as a wiki note (concept/synthesis/output/sop) |
+| `/autoresearch <topic>` | Autonomous multi-round loop: search, fetch, extract, cross-reference, gap-fill, file. Budget configured in `wiki/meta/program.md` |
+
+### Hot cache
+
+`wiki/hot.md` holds a rolling summary of recent sessions. It's auto-injected at SessionStart (via hook) and regenerated at Stop (via `scripts/update-hot-cache.sh` calling `claude -p` one-shot in the background). New sessions start with recent context. No recap needed.
+
+The hooks are defined in `.claude/settings.json` and use `$CLAUDE_PROJECT_DIR` so they work in any clone without edits.
+
+### Dashboard
+
+`wiki/meta/dashboard.base` is an Obsidian Bases dashboard (requires Obsidian v1.9.10+). Four views: Recent, Low confidence, Unexplored, Stale (> 90 days). Open it in Obsidian to browse the vault visually.
 
 ## Folder Structure
 
